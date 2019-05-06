@@ -16,8 +16,11 @@ class LoginController extends Controller {
      */
     public function loginVerify (Request $request) {
         if ($request->isMethod('POST')) {
-            $result = DB::table('user')->get();
-            dd($result);
+            $result = DB::table('user')
+                ->where('username', '=', $_POST['username'])
+                ->where('password', '=', md5($_POST['password']))
+                ->get();
+            print_r($result);
         }
     }
 }
