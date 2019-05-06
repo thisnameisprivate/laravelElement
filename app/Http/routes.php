@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['uses' => 'LoginController@login']);
+Route::post('Login/loginVerify', ['uses' => 'LoginController@loginVerify']);
