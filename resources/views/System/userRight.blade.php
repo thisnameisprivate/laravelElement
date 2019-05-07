@@ -74,21 +74,21 @@
                 <a href="javascript:;" class="layui-anim layui-anim-up layui-this" id="classification">广元协和医院男科</a>
                 <dl class="layui-nav-child">
                     <foreach name="hospitals" item="vo" key="index">
-                        <dd class="layui-anim layui-anim-scaleSpring"><a href="javascript:;" onclick="readyHospital(this);" tablename="{$vo['tableName']}">{$vo['hospital']}</a></dd>
+                        <dd class="layui-anim layui-anim-scaleSpring"><a href="javascript:;" tablename="{$vo['tableName']}">{$vo['hospital']}</a></dd>
                     </foreach>
                 </dl>
             </li>
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="" class="layui-nav-img">
-                    贤心
+                    {{ $username }}
                 </a>
                 <dl class="layui-nav-child">
-                    <dd><a href="javascript:;" onclick="personal();">基本资料</a></dd>
+                    <dd><a href="javascript:;">基本资料</a></dd>
                     <dd><a href="javascript:;">安全设置</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item" onclick="loginOut();"><a href="javascript:;">注销</a></li>
+            <li class="layui-nav-item""><a href="javascript:;">注销</a></li>
         </ul>
     </div>
 
@@ -98,9 +98,9 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;"><span class="layui-icon layui-icon-component">&nbsp;&nbsp;</span><span class="slide-font">病人预约管理</span></a>
                     <dl class="layui-nav-child">
-                        <dd><a  href="javascript:;" onclick="visit();"><span class="layui-icon layui-icon-edit">&nbsp;&nbsp;</span><span class="slide-font">预约登记列表</span></a></dd>
-                        <dd><a  href="javascript:;" onclick="detailReport();"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">客服明细报表</span></a></dd>
-                        <dd><a  href="javascript:;" onclick="monthdata();"><span class="layui-icon layui-icon-console">&nbsp;&nbsp;</span><span class="slide-font">月趋势报表</span></a></dd>
+                        <dd><a  href="javascript:;"><span class="layui-icon layui-icon-edit">&nbsp;&nbsp;</span><span class="slide-font">预约登记列表</span></a></dd>
+                        <dd><a  href="javascript:;"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">客服明细报表</span></a></dd>
+                        <dd><a  href="javascript:;"><span class="layui-icon layui-icon-console">&nbsp;&nbsp;</span><span class="slide-font">月趋势报表</span></a></dd>
                         <!--
                          <dd><a  href="javascript:;">数据横向对比</a></dd>
                          -->
@@ -144,17 +144,17 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;"><span class="layui-icon layui-icon-set-sm">&nbsp;&nbsp;</span><span class="slide-font">设置</span></a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" onclick="doctor();"><span class="layui-icon layui-icon-dialogue">&nbsp;&nbsp;</span><span class="slide-font">客服人员设置</span></a></dd>
-                        <dd><a href="javascript:;" onclick="disease();"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">病患类型设置</span></a></dd>
-                        <dd><a href="javascript:;" onclick="typesof();"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">媒体来源设置</span></a></dd>
-                        <dd><a href="javascript:;" onclick="hospitalsList();"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">医院科室设置</span></a></dd>
-                        <dd><a href="javascript:;" onclick="arrivalStatus();"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">来院状态设置</span></a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-dialogue">&nbsp;&nbsp;</span><span class="slide-font">客服人员设置</span></a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">病患类型设置</span></a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">媒体来源设置</span></a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">医院科室设置</span></a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">来院状态设置</span></a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;"><span class="layui-icon layui-icon-user">&nbsp;&nbsp;</span><span class="slide-font">我的资料</span></a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" onclick="personal();"><span class="layui-icon layui-icon-edit">&nbsp;&nbsp;</span><span class="slide-font">修改我的资料</span></a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-edit">&nbsp;&nbsp;</span><span class="slide-font">修改我的资料</span></a></dd>
                         <!--
                          <dd><a href="javascript:;">修改密码</a></dd>
                         <dd><a href="javascript:;">选项设置</a></dd>
@@ -164,8 +164,8 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;"><span class="layui-icon layui-icon-auz">&nbsp;&nbsp;</span><span class="slide-font">系统管理</span></a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" onclick="access();"><span class="layui-icon layui-icon-user">&nbsp;&nbsp;</span><span class="slide-font">用户管理</span></a></dd>
-                        <dd><a href="javascript:;" onclick="resources();"><span class="layui-icon layui-icon-user">&nbsp;&nbsp;</span><span class="slide-font">数据导出</span></a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-user">&nbsp;&nbsp;</span><span class="slide-font">用户管理</span></a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-user">&nbsp;&nbsp;</span><span class="slide-font">数据导出</span></a></dd>
                         <!--
                          <dd><a href="javascript:;">医院列表</a></dd>
                          <dd><a href="javascript:;">通知列表</a></dd>
@@ -176,7 +176,7 @@
                     <a href="javascript:;"><span class="layui-icon layui-icon-log">&nbsp;&nbsp;</span><span class="slide-font">日志记录</span></a>
                     <dl class="layui-nav-child">
                         <!--<dd><a href="javascript:;"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">操作日志</span></a></dd>-->
-                        <dd><a href="javascript:;" onclick="loginLog();"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">登录错误日志</span></a></dd>
+                        <dd><a href="javascript:;"><span class="layui-icon layui-icon-survey">&nbsp;&nbsp;</span><span class="slide-font">登录错误日志</span></a></dd>
                     </dl>
                 </li>
             </ul>
@@ -186,7 +186,7 @@
         <div class="layui-progress-bar layui-bg-green" lay-percent="0%"></div>
     </div>
     <div class="layui-body" id="layuibody">
-        <iframe id="iframe" src="{:U('Admin/Index/overView')}" frameborder="0"></iframe>
+        <iframe id="iframe" src="{{ url('System/page') }}" frameborder="0"></iframe>
     </div>
 </div>
 <div class="container">
@@ -203,240 +203,5 @@
 </body>
 <script src="{{ URL::asset('statics/layui/layui.js') }}"></script>
 <script type="text/javascript">
-    layui.use(['element', 'layer', 'form'], () => {
-        const iframe = document.getElementById('iframe');
-        var element = layui.element;
-        var layer = layui.layer;
-        var $ = layui.jquery;
-        var userAcc = JSON.parse(localStorage.getItem('userAcc'));
-        // 医院列表下拉框渲染
-        readyHospital = tableName => {
-            var ification = document.getElementById('classification');
-            ification.innerHTML = tableName.innerText + "<span class='layui-nav-more'></span>";
-            document.cookie = 'tableName=' + tableName.getAttribute('tablename');
-            iframeSetAttr("{:U('Admin/Index/overView')}");
-        }
-        // function request.
-        visit           = ()    => { if (! Boolean(userAcc.resready))      { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/visit')}") }
-        hospitalsList   = ()    => { if (! Boolean(userAcc.setready))      { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/hospitalsList')}") }
-        disease         = ()    => { if (! Boolean(userAcc.setready))      { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/disease')}") }
-        typesof         = ()    => { if (! Boolean(userAcc.setready))      { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/typesof')}") }
-        doctor          = ()    => { if (! Boolean(userAcc.setready))      { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/doctor')}") }
-        arrivalStatus   = ()    => { if (! Boolean(userAcc.setready))      { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/arrivalStatus')}") }
-        detailReport    = ()    => { if (! Boolean(userAcc.resready))      { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/detailReport')}") }
-        monthdata       = ()    => { if (! Boolean(userAcc.resready))      { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/monthdata')}") }
-        access          = ()    => { if (! Boolean(userAcc.manageready))   { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/access')}") }
-        resources       = ()    => { if (! Boolean(userAcc.manageready))   { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/resources')}") }
-        personal        = ()    => { if (! Boolean(userAcc.myready))       { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/personal')}") }
-        loginLog        = ()    => { if (! Boolean(userAcc.logready))      { layer.msg("权限不足", {icon: 5}); return false; } iframeSetAttr("{:U('Admin/Index/loginLog')}") }
-
-        iframeSetAttr   = (url) => { loadingStart(); iframe.setAttribute('src', url); }
-        //  Request function
-        Request = (url) => {
-            var Request = new XMLHttpRequest();
-            Request.open('GET', url);
-            Request.send();
-            Request.onreadystatechange = () => {
-                if (Request.readyState === 4 && Request.status === 200) {
-                    $('#iframe').setAttribute('src', url);
-                }
-            }
-        }
-        // Projress loading ...
-        loadingStart = () => {
-            var projress = $('#loading').show().children();
-            var promise = new Promise(resolve => {
-                projress.animate({width: '33.8%'}, 100, () => {
-                    setTimeout(() => {
-                        resolve();
-                    }, 100)
-                });
-            }).then(() => {
-                return new Promise(resolve => {
-                    projress.animate({width: '66.8%'}, 100, () => {
-                        setTimeout(() => {
-                            resolve();
-                        }, 100)
-                    });
-                });
-            }).then(() => {
-                return new Promise(resolve => {
-                    projress.animate({width: '98.8%'}, 150, () => {
-                        setTimeout(() => {
-                            resolve();
-                        }, 150)
-                    });
-                });
-            }).then(resolve => {
-                projress.animate({width: '0%'});
-                $('#loading').hide(200);
-            });
-        }
-        // 注销用户
-        loginOut = () => {
-            var Request = new XMLHttpRequest();
-            Request.open("GET", "{:U('Admin/Index/loginOut')}");
-            Request.send();
-            Request.onreadystatechange = () => {
-                if (Request.readyState === 4 && Request.status === 200) {
-                    if (Request.responseText == 'false') {
-                        layer.msg("注销失败", {icon:5});
-                    } else {
-                        layer.msg("注销成功", {icon:6});
-                        socket.onclose();
-                        window.location.href = "http://ruo.gyxhyy.com";
-                    }
-                }
-            }
-        }
-        // 侧边栏伸缩
-        var isShow = true;
-        $('.kit-side-fold').click(function () {
-            // console.log($('.layui-nav-tree').children().children().children('span.layui-nav-more'));
-            if (isShow) {
-                $('#layui-side').animate({width: '60px'}, 100);
-                $('#layuibody').animate({left: '60px'}, 100).children().css('width', '100%');
-                $('#bottom-title').animate({left: '60px'}, 100);
-                $('.layui-nav-tree').animate({width: '75px'}, function () {
-                    $(this).children().children().children('span.layui-nav-more').hide();
-                });
-                $(this).children().children()
-                    .removeClass('layui-icon-shrink-right')
-                    .addClass('layui-icon-spread-left');
-                $('.slide-font').each(function () {
-                    $(this).hide(100).prev().css('font-size', '20px');
-                })
-                // 鼠标悬停提示效果
-                $('.slide-font').parent().mouseover(function () {
-                    $(this).each(function () {
-                        layer.tips($(this).text(), $(this), {
-                            tips: 2,
-                            time: 1000,
-                        });
-                    })
-                }).mouseout(function () {
-                    layer.close('tips');
-                })
-                isShow = false;
-            } else {
-                $('#layui-side').animate({width: '200px'}, 150);
-                $('#layuibody').animate({left: '200px'}, 150).children().css('width', '91.2%');
-                $('#bottom-title').animate({left: '200px'}, 100);
-                $(this).children().children()
-                    .removeClass('layui-icon-spread-left')
-                    .addClass('layui-icon-shrink-right');
-                $('.layui-nav-tree').animate({width: '200px'}, function () {
-                    $(this).children().children().children('span.layui-nav-more').show();
-                });
-                isShow = true;
-                $('.slide-font').each(function () {
-                    $(this).show(100).prev().css('font-size', '14px');
-                })
-            }
-        })
-        $('.title-icon-size').mouseover(function () {
-            $(this).each(function () {
-                layer.tips($(this).attr('tips'), $(this), {
-                    tips: 3,
-                    time: 1000,
-                });
-            })
-        }).mouseout(function () {
-            layer.close('tips');
-        })
-        // 通讯图标动画
-        $('#communication').mouseover(function () {
-            $(this).addClass('layui-anim layui-anim-rotate');
-        }).mouseout(function () {
-            $(this).removeClass('layui-anim layui-anim-rotate');
-        });
-        // 通讯弹出层
-        $('#communication').click(function () {
-            layer.msg('开发中...', {icon: 6});
-        });
-        // $('#userList').html("<dd><span class=\"layui-badge-dot layui-bg-green\"></span><a href=\"\">" + username + "</a></dd>");
-        /**************************************************************************************************************
-         *      ##         ##  ##########   ########\  #########    ####      ##   ##  ##########  ##########         **
-         *     ##   ##    ##  ##           ##      ## ##         ##     ##   ##  ##   ##              ##              **
-         *    ##  ## ##  ##  ##########   #########  #########  ##      ##  ## ##    ##########      ##               **
-         *   ## ##   ## ##  ##           ##       ##       ##    ##    ##  ##  ##   ##              ##                **
-         *  ###       ###  ###########  #########/  ########      ####    ##    ## ###########     ##                 **
-         *                                                                                                            **
-         ***************************************************************************************************************
-         ***************************************************************************************************************
-         * */
-            // 用户头像图片地址
-        var path = "__PUBLIC__/statics/userimage/{$userImageUrl}";
-        var socket = new WebSocket('ws://211.149.233.203:2001');
-        // 多客户端格式
-        function say_to_all (content) {
-            socket.addEventListener('open', function () {
-                var message = {"type": "say_to_all", "content": content};
-                socket.send(JSON.stringify(message));
-            })
-        }
-        // 单对单通讯格式
-        function say_to_one (content) {
-            var message = {"type": "say_to_one", "content": content};
-            socket.send(JSON.stringify(message));
-        }
-        socket.onopen = () => {
-            var data = username;
-            var message = {"type": "say_to_all", "content": data, "init": "login"};
-            socket.send(JSON.stringify(message));
-            // console.log(JSON.stringify(message));
-        };
-        // say_to_all("这是第一条测试群发消息，你好， workerman通讯框架!");
-        socket.onmessage = (event) => {
-            var str = event.data;
-            if (str.substr(0, 1) == '{' && JSON.parse(event.data).type == 'init') {
-                var client_id = JSON.parse(event.data).client_id;
-                delCookie(username);
-                document.cookie =  username + "=" + client_id;
-                return;
-            } else {
-                // 用户上线
-                // 根据 | 截取字符串转换为数组遍历到Html.
-                if (str.indexOf('|') != -1) {
-                    var userList = str.substr(0, str.indexOf('|'));
-                    var userArr  = userList.split(',');
-                    // 调用 top-tips 方法
-                    top_tips(str.substr(str.indexOf('|') + 1, str.length));
-                    // 渲染 html
-                    $('#userList').children().remove();
-                    for (var i = 0; i < userArr.length; i ++) {
-                        $('#userList').append("<dd><a href=\"\"><img class='top-img' src='"+ path +"'>"+ userArr[i] +"</a></ >");
-                    }
-                } else {
-                    // 用户下线
-                    if (str.indexOf('-') != -1) {
-                        var userList = str.substr(0, str.indexOf('-'));
-                        var userArr = userList.split(',');
-                        top_tips(str.substr(str.indexOf('-') + 1, str.length));
-                        $('#userList').children().remove();
-                        for (var i = 0; i < userArr.length; i ++) {
-                            $('#userList').append("<dd><span class=\"layui-badge-dot layui-bg-green\"><img class='top-img' src='"+ path +"'></span><a href=\"\">"+ userArr[i] +"</a></dd>");
-                        }
-                    }
-                }
-            }
-        }
-        socket.onclose = () => {
-            socket.send(username);
-        }
-        // top-tips
-        function top_tips (login_log) {
-            var top_tips = $('#top-tips-list');
-            if (top_tips.children().length > 2) top_tips.children().remove();
-            (function () {
-                top_tips.append("<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"layui-icon layui-icon-notice\"><img class='top-img' src='"+ path +"'></span>&nbsp;&nbsp;&nbsp;&nbsp;"+ login_log +"</li>");
-                setTimeout(function () {
-                    top_tips.children().fadeOut(10000);
-                }, 2000)
-            })();
-        }
-        // 设置头像/用户名
-        $('.layui-nav-img').parent().html("<a href='javascript:;'><img src='"+ path +"' class='layui-nav-img'>" + username + "<span class='layui-nav-more'></span></a>");
-    });
 </script>
 </html>

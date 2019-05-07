@@ -14,3 +14,7 @@
 Route::get('/', ['uses' => 'LoginController@login']);
 Route::post('Login/loginVerify', ['uses' => 'LoginController@loginVerify']);
 Route::get('System/userRight', ['uses' => 'SystemController@userRight']);
+Route::get('System/page', ['uses' => 'SystemController@page']);
+
+// Route::get('System/visitSelect/{$page}/{$limit}}', ['uses' => 'SystemController@visitSelect']);
+Route::get('System/visitSelect', ['uses' => 'SystemController@visitSelect']);
