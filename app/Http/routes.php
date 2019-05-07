@@ -13,3 +13,4 @@
 
 Route::get('/', ['uses' => 'LoginController@login']);
 Route::post('Login/loginVerify', ['uses' => 'LoginController@loginVerify']);
+Route::get('System/index', ['uses' => 'SystemController@index']);

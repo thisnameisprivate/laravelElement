@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class LoginController extends Controller {
     public function login () {
-        return view('login/login');
+        return view('login.login');
     }
     /**
      * @登录验证
@@ -20,7 +20,11 @@ class LoginController extends Controller {
                 ->where('username', '=', $_POST['username'])
                 ->where('password', '=', md5($_POST['password']))
                 ->get();
-            print_r($result);
+            if (! empty($result)) {
+                return redirect('System/index');
+            } else {
+                return view('login/login');
+            }
         }
     }
 }
