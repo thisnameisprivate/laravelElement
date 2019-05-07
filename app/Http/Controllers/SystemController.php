@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class SystemController extends Controller {
-    public function index () {
-        return view('system/index');
+    public function userRight () {
+        return view('System/userRight');
     }
 }
