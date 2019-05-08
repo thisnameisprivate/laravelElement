@@ -26,9 +26,22 @@ class SystemController extends Controller {
         return view("System/page");
     }
 
-    public function visitSelect () {
-        if (isMethod('GET')) {
-            print_r($_GET);
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     *
+     */
+    public function visitSelect (Request $request) {
+        if ($request->isMethod('GET')) {
+            $tableName = Cookie::get('tableName');
+            $datas = DB::table($tableName)->paginate($_GET['limit']);
+            $datasTotal = $datas->total();
+            return response()->json([
+                'code'   => 0,
+                'msg'    => '',
+                'count'  => $datasTotal,
+                'data'   => $datas->toArray()['data']
+            ]);
         }
     }
 }

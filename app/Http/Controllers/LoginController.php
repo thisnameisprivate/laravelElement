@@ -30,8 +30,6 @@ class LoginController extends Controller {
                 ->where('password', '=', md5($_POST['password']))
                 ->get();
             if (! empty($result)) {
-//                setCookie('username', $_POST['username']);
-//                $this->loginLog($_POST, true);
                 return redirect('System/userRight')->cookie('username', $_POST['username']);
             } else {
                 return view('login/login');
